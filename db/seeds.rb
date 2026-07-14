@@ -3,6 +3,14 @@
 # Audio object keys point at objects that must exist in the configured bucket
 # (see docker-compose.yml's minio-seed step) for the /play endpoint to return
 # a working signed URL.
+#
+# Skipped in test: `db:prepare` runs this automatically the first time it
+# creates a database, and RSpec's request specs assert exact record counts
+# against a database populated only by factories.
+if Rails.env.test?
+  puts "Skipping db/seeds.rb in test."
+  return
+end
 
 catalog = [
   {
