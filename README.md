@@ -1,7 +1,7 @@
 # Music Streamer
 
 [![CI](https://github.com/abhsss96/Music-Streamer/actions/workflows/ci.yml/badge.svg)](https://github.com/abhsss96/Music-Streamer/actions/workflows/ci.yml)
-[![Docker Hub](https://img.shields.io/docker/v/abhsss96/music-streamer?label=docker%20hub&sort=date)](https://hub.docker.com/r/abhsss96/music-streamer)
+[![Docker Hub](https://img.shields.io/docker/v/abhsss/music-streamer?label=docker%20hub&sort=date)](https://hub.docker.com/r/abhsss/music-streamer)
 
 API-only Rails backend for a music streaming platform. Rails is the control
 plane only: it handles auth, catalog, playlists, search, and issuing
@@ -80,8 +80,8 @@ All configuration is via environment variables (twelve-factor). See
 RSpec) against a Postgres service container on every push and pull request.
 
 On a successful push to `master`, a second job builds the Docker image and
-pushes it to Docker Hub as `abhsss96/music-streamer:latest` and
-`abhsss96/music-streamer:<commit-sha>`. This requires two repo secrets
+pushes it to Docker Hub as `abhsss/music-streamer:latest` and
+`abhsss/music-streamer:<commit-sha>`. This requires two repo secrets
 (Settings -> Secrets and variables -> Actions):
 
 | Secret | Value |

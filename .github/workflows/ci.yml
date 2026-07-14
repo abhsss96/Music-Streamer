@@ -63,7 +63,7 @@ jobs:
           context: .
           push: true
           tags: |
-            abhsss96/music-streamer:latest
-            abhsss96/music-streamer:${{ github.sha }}
+            abhsss/music-streamer:latest
+            abhsss/music-streamer:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
