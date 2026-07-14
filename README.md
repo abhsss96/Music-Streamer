@@ -1,10 +1,15 @@
 # Music Streamer
 
+[![CI](https://github.com/abhsss96/Music-Streamer/actions/workflows/ci.yml/badge.svg)](https://github.com/abhsss96/Music-Streamer/actions/workflows/ci.yml)
+[![Docker Hub](https://img.shields.io/docker/v/abhsss96/music-streamer?label=docker%20hub&sort=date)](https://hub.docker.com/r/abhsss96/music-streamer)
+
 API-only Rails backend for a music streaming platform. Rails is the control
 plane only: it handles auth, catalog, playlists, search, and issuing
 short-lived signed URLs for audio. It never streams audio bytes itself --
 clients fetch audio directly from object storage (MinIO locally, a
 GCS/S3-compatible bucket behind a CDN in production) using the signed URL.
+
+![Architecture diagram](music_streaming_gcp_architecture.png)
 
 ## Stack
 
