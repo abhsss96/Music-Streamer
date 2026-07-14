@@ -1,7 +1,7 @@
 # Music Streamer
 
 [![CI](https://github.com/abhsss96/Music-Streamer/actions/workflows/ci.yml/badge.svg)](https://github.com/abhsss96/Music-Streamer/actions/workflows/ci.yml)
-[![Docker Hub](https://img.shields.io/docker/v/abhsss/music-streamer/latest?label=docker%20hub&logo=docker&logoColor=white&color=2496ED)](https://hub.docker.com/r/abhsss/music-streamer/tags?name=latest)
+[![Docker Hub](https://img.shields.io/badge/docker%20hub-latest-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/abhsss/music-streamer/tags?name=latest)
 [![Docker Image Size](https://img.shields.io/docker/image-size/abhsss/music-streamer/latest?logo=docker&logoColor=white&color=2496ED)](https://hub.docker.com/r/abhsss/music-streamer/tags?name=latest)
 [![Docker Pulls](https://img.shields.io/docker/pulls/abhsss/music-streamer?logo=docker&logoColor=white&color=2496ED)](https://hub.docker.com/r/abhsss/music-streamer)
 [![Ruby](https://img.shields.io/badge/ruby-3.4.4-CC342D?logo=ruby&logoColor=white)](.ruby-version)
