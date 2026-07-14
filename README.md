@@ -2,6 +2,10 @@
 
 [![CI](https://github.com/abhsss96/Music-Streamer/actions/workflows/ci.yml/badge.svg)](https://github.com/abhsss96/Music-Streamer/actions/workflows/ci.yml)
 [![Docker Hub](https://img.shields.io/docker/v/abhsss/music-streamer?label=docker%20hub&sort=date)](https://hub.docker.com/r/abhsss/music-streamer)
+[![Docker Image Size](https://img.shields.io/docker/image-size/abhsss/music-streamer)](https://hub.docker.com/r/abhsss/music-streamer)
+[![Docker Pulls](https://img.shields.io/docker/pulls/abhsss/music-streamer)](https://hub.docker.com/r/abhsss/music-streamer)
+[![Ruby](https://img.shields.io/badge/ruby-3.4.4-CC342D?logo=ruby&logoColor=white)](.ruby-version)
+[![Rails](https://img.shields.io/badge/rails-8.1-CC0000?logo=rubyonrails&logoColor=white)](Gemfile)
 
 API-only Rails backend for a music streaming platform. Rails is the control
 plane only: it handles auth, catalog, playlists, search, and issuing
