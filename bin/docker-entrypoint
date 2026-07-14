@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+# Both the web and worker processes share this image and may start
+# concurrently, so both prepare the database (create it if missing, then run
+# any pending migrations). Rails wraps migrations in a Postgres advisory
+# lock, so running this from two containers at once is safe -- one just
+# waits for the other.
+./bin/rails db:prepare
+
+exec "${@}"

@@ -1,0 +1,17 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+log/*
+tmp/*
+!log/.keep
+!tmp/.keep
+storage/*
+!storage/.keep
+.bundle
+public/assets
+coverage/
+spec/
+.rspec
+README.md
