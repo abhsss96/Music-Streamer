@@ -9,7 +9,7 @@ short-lived signed URLs for audio. It never streams audio bytes itself --
 clients fetch audio directly from object storage (MinIO locally, a
 GCS/S3-compatible bucket behind a CDN in production) using the signed URL.
 
-![Architecture diagram](music_streaming_gcp_architecture.png)
+![Architecture diagram](music_streaming_gcp_architecture.svg)
 
 ## Stack
 
