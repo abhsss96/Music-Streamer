@@ -69,6 +69,21 @@ All configuration is via environment variables (twelve-factor). See
 | `CORS_ORIGINS` | Comma-separated list of allowed web/mobile client origins. |
 | `RAILS_MAX_THREADS` | DB pool size / Puma thread count. |
 
+## Continuous integration
+
+`.github/workflows/ci.yml` runs `bin/ci` (rubocop, bundler-audit, brakeman,
+RSpec) against a Postgres service container on every push and pull request.
+
+On a successful push to `master`, a second job builds the Docker image and
+pushes it to Docker Hub as `abhsss96/music-streamer:latest` and
+`abhsss96/music-streamer:<commit-sha>`. This requires two repo secrets
+(Settings -> Secrets and variables -> Actions):
+
+| Secret | Value |
+| --- | --- |
+| `DOCKERHUB_USERNAME` | Docker Hub username |
+| `DOCKERHUB_TOKEN` | Docker Hub access token (Account Settings -> Security -> New Access Token) |
+
 ## API
 
 All endpoints are versioned under `/api/v1` and (other than signup/login)
