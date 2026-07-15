@@ -2,7 +2,8 @@ module Api
   module V1
     class ArtistsController < BaseController
       def index
-        render json: paginate(Artist.order(:name))
+        scope = params[:q].present? ? Artist.search(params[:q]) : Artist.order(:name)
+        render json: paginate(scope)
       end
 
       def show

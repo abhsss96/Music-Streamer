@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_14_170344) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_15_170251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -28,8 +28,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_14_170344) do
     t.text "bio"
     t.datetime "created_at", null: false
     t.string "name", null: false
+    t.virtual "search_vector", type: :tsvector, as: "to_tsvector('english'::regconfig, (COALESCE(name, ''::character varying))::text)", stored: true
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_artists_on_name"
+    t.index ["search_vector"], name: "index_artists_on_search_vector", using: :gin
   end
 
   create_table "follows", force: :cascade do |t|
