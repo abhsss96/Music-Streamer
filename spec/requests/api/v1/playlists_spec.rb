@@ -17,7 +17,19 @@ RSpec.describe "Playlists", type: :request do
       get "/api/v1/playlists", headers: auth_headers(user)
 
       expect(response).to have_http_status(:ok)
-      expect(json_response.map { |p| p["name"] }).to eq([ "Mine" ])
+      expect(json_response["data"].map { |p| p["name"] }).to eq([ "Mine" ])
+      expect(json_response["meta"]["total_count"]).to eq(1)
+    end
+
+    it "paginates results" do
+      create_list(:playlist, 3, user: user)
+
+      get "/api/v1/playlists", params: { per_page: 2 }, headers: auth_headers(user)
+
+      expect(json_response["data"].size).to eq(2)
+      expect(json_response["meta"]).to eq(
+        "page" => 1, "per_page" => 2, "total_count" => 3, "total_pages" => 2
+      )
     end
   end
 

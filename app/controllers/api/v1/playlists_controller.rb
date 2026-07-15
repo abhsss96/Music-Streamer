@@ -2,7 +2,7 @@ module Api
   module V1
     class PlaylistsController < BaseController
       def index
-        render json: policy_scope(Playlist).order(:name)
+        render json: paginate(policy_scope(Playlist).order(:name))
       end
 
       def show

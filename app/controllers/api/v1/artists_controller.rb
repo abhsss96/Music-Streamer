@@ -2,7 +2,7 @@ module Api
   module V1
     class ArtistsController < BaseController
       def index
-        render json: Artist.order(:name)
+        render json: paginate(Artist.order(:name))
       end
 
       def show
